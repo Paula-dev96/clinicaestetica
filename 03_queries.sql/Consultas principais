@@ -1,0 +1,31 @@
+-- =============================================
+-- SCRIPT 2 - CONSULTAS SELECT
+-- =============================================
+
+-- 1. SELECT com WHERE
+SELECT nome, telefone 
+FROM cliente
+WHERE nome LIKE '%a%';
+
+-- 2. SELECT com ORDER BY
+SELECT nome, especialidade 
+FROM profissional
+ORDER BY nome ASC;
+
+-- 3. SELECT com LIMIT
+SELECT * 
+FROM procedimento
+LIMIT 2;
+
+-- 4. SELECT com JOIN
+SELECT c.nome AS cliente, p.nome AS profissional, pr.nome AS procedimento, a.data, a.time
+FROM agendamento a
+JOIN cliente c ON c.id_cliente = a.id_cliente
+JOIN profissional p ON p.id_profissional = a.id_profissional
+JOIN procedimento pr ON pr.id_procedimento = a.id_procedimento;
+
+-- 5. SELECT com múltiplas condições
+SELECT *
+FROM pagamento
+WHERE status = 'Pago'
+  AND valor > 300;

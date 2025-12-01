@@ -1,0 +1,38 @@
+-- =============================================
+-- SCRIPT 3 - UPDATES E DELETES
+-- =============================================
+
+-- ================
+-- UPDATES
+-- ================
+
+-- Atualizar telefone do cliente
+UPDATE cliente
+SET telefone = '11 90000-0000'
+WHERE id_cliente = 1;
+
+-- Atualizar status do pagamento
+UPDATE pagamento
+SET status = 'Pago'
+WHERE id_pagamento = 2;
+
+-- Tornar procedimento indisponível
+UPDATE procedimento
+SET status = 'Indisponível'
+WHERE id_procedimento = 2;
+
+-- ================
+-- DELETES
+-- ================
+
+-- Excluir pagamento
+DELETE FROM pagamento
+WHERE id_pagamento = 3;
+
+-- Excluir agendamento (observar FK)
+DELETE FROM agendamento
+WHERE id_agendamento = 3;
+
+-- Excluir cliente
+DELETE FROM cliente
+WHERE id_cliente = 3;

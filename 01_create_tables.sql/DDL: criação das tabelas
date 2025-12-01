@@ -1,0 +1,22 @@
+Insert INTO cliente(id_cliente, nome, telefone, endereco)
+values (1, 'Ana de Souza', '11 999999999', 'Rua Pernambuco, 201, Jardim Planalto, Arujá/Sp');
+
+Insert INTO profissional(id_profissional, nome, especialidade)
+values (1, 'Paula', 'Esteticista');
+
+insert INTO procedimento (id_procedimento, nome, status)
+values (1, 'Drengagem linfática', 'Realizado');
+
+Insert INTO Agendamento (id_agendamento, data, time, id_cliente, id_profissional, id_procedimento)
+values (1, '2025-10-20', '14:00', 1, 1, 1);
+
+insert INTO pagamento (id_pagamento, valor , forma_pagamento, data, status, id_cliente, id_agendamento)
+values (1, 500.50, 'crédito', '2025-10-20', 'pago', 1, 1);
+
+
+
+select * from cliente;
+select * from profissional;
+select * from procedimento;
+select * from agendamento;
+select * from pagamento;

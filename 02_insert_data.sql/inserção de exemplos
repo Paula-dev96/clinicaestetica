@@ -1,0 +1,33 @@
+-- =============================================
+-- SCRIPT 1 - INSERTS DAS TABELAS PRINCIPAIS
+-- =============================================
+
+-- CLIENTE
+INSERT INTO cliente (id_cliente, nome, telefone, endereco) VALUES
+(1, 'Ana de Souza', '12 99999-9999', 'Rua Pernambuco, 201, Jardim Planalto, Arujá/SP'),
+(2, 'Carlos Mendes', '11 98888-7777', 'Rua das Flores, 55, Centro, Arujá/SP'),
+(3, 'Julia Santos', '11 97777-6666', 'Av Brasil, 450, Arujá/SP');
+
+-- PROFISSIONAL
+INSERT INTO profissional (id_profissional, nome, especialidade) VALUES
+(1, 'Paula', 'Esteticista'),
+(2, 'Marina', 'Massoterapeuta'),
+(3, 'Fernanda', 'Dermaticista');
+
+-- PROCEDIMENTO
+INSERT INTO procedimento (id_procedimento, nome, status) VALUES
+(1, 'Drenagem Linfática', 'Realizado'),
+(2, 'Limpeza de Pele', 'Disponível'),
+(3, 'Massagem Relaxante', 'Disponível');
+
+-- AGENDAMENTO
+INSERT INTO agendamento (id_agendamento, data, time, id_cliente, id_profissional, id_procedimento) VALUES
+(1, '2025-10-20', '14:00', 1, 1, 1),
+(2, '2025-11-10', '09:00', 2, 2, 3),
+(3, '2025-12-01', '13:30', 3, 3, 2);
+
+-- PAGAMENTO
+INSERT INTO pagamento (id_pagamento, valor, forma_pagamento, data, status, id_cliente, id_agendamento) VALUES
+(1, 500.50, 'Crédito', '2025-10-20', 'Pago', 1, 1),
+(2, 200.00, 'Pix', '2025-11-10', 'Pendente', 2, 2),
+(3, 350.00, 'Débito', '2025-12-01', 'Pago', 3, 3);
